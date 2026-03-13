@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pimpri Chinchwad College of Engineering (PCCOE)</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <% if (successMsg || errorMsg) { %>
+    <div class="alerts">
+      <% if (successMsg) { %>
+        <div class="alert alert-success"><%= successMsg %></div>
+      <% } %>
+      <% if (errorMsg) { %>
+        <div class="alert alert-error"><%= errorMsg %></div>
+      <% } %>
+    </div>
+  <% } %>
+
+  <header>
+    <div class="logo">PCCOE</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+    </ul>
+    <a href="#admissions" class="cta-btn">Apply Now</a>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Welcome to PCCOE</h1>
+    <p>A premier institute dedicated to academic excellence, innovation, and holistic development of engineering professionals.</p>
+    <div class="hero-buttons">
+      <a href="#admissions" class="btn-primary">Apply for 2026 Admissions</a>
+      <a href="#about" class="btn-secondary">Explore Campus</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="section-title">Why Choose PCCOE?</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Excellence in Education since 1999</h3>
+        <p>Pimpri Chinchwad College of Engineering (PCCOE) is one of the best engineering colleges in Pune. Established in 1999, it is an Autonomous institute under Savitribai Phule Pune University.</p>
+        <p>With state-of-the-art infrastructure, highly qualified faculty, and an excellent placement record, PCCOE provides a transformative educational experience that prepares students for global challenges.</p>
+        <ul style="margin-top:20px; list-style-position: inside;">
+          <li>Top Tier Placements</li>
+          <li>Research and Innovation Hub</li>
+          <li>Extensive Industry Collaborations</li>
+          <li>Vibrant Campus Life</li>
+        </ul>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="PCCOE Campus Activity">
+      </div>
+    </div>
+  </section>
+
+  <section id="academics" class="section courses">
+    <h2 class="section-title">Academic Programs</h2>
+    <div class="course-grid">
+      <div class="course-card">
+        <div class="course-header" style="background: linear-gradient(135deg, #0b2545, #13315c);">Computer Engg.</div>
+        <div>
+          <p>Learn core computing concepts, software development, AI, and data science in our flagship department.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-header" style="background: linear-gradient(135deg, #2b2d42, #8d99ae);">IT</div>
+        <div>
+          <p>Focusing on modern web technologies, networking, cloud computing, and cyber security.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-header" style="background: linear-gradient(135deg, #001233, #002855);">EnTC</div>
+        <div>
+          <p>Electronics and Telecommunication Engineering, bridging the gap between hardware and communication.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-header" style="background: linear-gradient(135deg, #3a0ca3, #4361ee);">Mechanical</div>
+        <div>
+          <p>Mastering thermodynamics, robotics, manufacturing processes, and design engineering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="admissions" class="section admissions">
+    <div class="form-container">
+      <h2>Admission Inquiry</h2>
+      <p>Have questions about admissions? Drop us a message and our counselor will get in touch with you.</p>
+      
+      <form action="/api/inquiry" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXXXXXXX">
+        </div>
+        <div class="form-group">
+          <label for="course">Interested Course</label>
+          <select id="course" name="course" required>
+            <option value="" disabled selected>Select a Course</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="EnTC Engineering">EnTC Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Any specific questions?"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Pimpri Chinchwad College of Engineering (PCCOE). All rights reserved.</p>
+    <p style="margin-top:10px; font-size: 0.9em; opacity: 0.7;">Developed for FSD Assignment 5.</p>
+  </footer>
+
+  <script>
+    // Simple script to auto-dismiss alerts after 5 seconds
+    setTimeout(() => {
+      const alerts = document.querySelector('.alerts');
+      if (alerts) {
+        alerts.style.transition = 'opacity 0.5s ease';
+        alerts.style.opacity = '0';
+        setTimeout(() => alerts.remove(), 500);
+      }
+    }, 5000);
+  </script>
+</body>
+</html>
