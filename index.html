@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple IPL Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <h1>CSK Team Analytics Dashboard</h1>
+        <p>Simple IPL Dashboard for Assignment 4</p>
+    </header>
+
+    <div class="container">
+        <!-- Key Metrics Cards -->
+        <div class="cards-wrapper">
+            <div class="card">
+                <h3>IPL Titles</h3>
+                <div class="value">5</div>
+                <div class="description">Champions</div>
+            </div>
+            <div class="card">
+                <h3>Win Percentage</h3>
+                <div class="value">58.9%</div>
+                <div class="description">All-time record</div>
+            </div>
+            <div class="card" style="border-top-color: #ff8c00;">
+                <h3>Most Runs</h3>
+                <div class="value">R. Gaikwad</div>
+                <div class="description">Current Season</div>
+            </div>
+            <div class="card" style="border-top-color: #9d00ff;">
+                <h3>Most Wickets</h3>
+                <div class="value">T. Deshpande</div>
+                <div class="description">Current Season</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-wrapper">
+            <div class="chart-container">
+                <h2>Season Performance (Wins vs Losses)</h2>
+                <canvas id="performanceChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Runs Scored per Match</h2>
+                <canvas id="runsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+</html>
