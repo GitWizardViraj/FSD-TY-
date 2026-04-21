@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Simple light background */
+    background-color: #f7f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 5px solid #fdb913; /* CSK Yellow */
+}
+
+.header h1 {
+    color: #0081e9; /* CSK Blue */
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #ffffff;
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 4px solid #fdb913; /* CSK Yellow */
+}
+
+.card h3 {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card .value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.card .description {
+    font-size: 13px;
+    color: #888;
+}
+
+.charts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 450px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-container h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+canvas {
+    width: 100% !important;
+    max-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .cards-wrapper {
+        flex-direction: column;
+    }
+    .chart-container {
+        min-width: 100%;
+    }
+}
